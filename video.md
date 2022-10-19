@@ -39,7 +39,7 @@ ffmpeg -fflags +genpts -r 25 -i video.h265 -vcodec copy video.mp4
 Mux the retimed video with audio:
 
 ```
-ffmpeg -itsoffset 1.057 -i video.mp4 -i audio.mka -c copy output.mp4
+ffmpeg -i video.mp4 -i audio.mka -c copy output.mp4
 ```
 
 If audio is not in sync, use `itsoffset` with delay in seconds (here e.g. 1.057 seconds; position matters, if the delay goes the wrong way move `itsoffset` parameter before the other `-i` switch):
