@@ -24,6 +24,12 @@ Extract h265 video stream from 24 fps version:
 ffmpeg -y -i movie.mp4 -c:v copy -bsf hevc_mp4toannexb -f hevc video.h265
 ```
 
+If the video is h264 you can omit the stream filters (remember to replace h265 with h264 in the next phase):
+
+```
+ffmpeg -y -i movie.mp4 -c:v copy video.h264
+```
+
 Generate timestamps (retime to 25 fps):
 
 ```
